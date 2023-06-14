@@ -1,0 +1,13 @@
+name: Main Workflow
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * 0"
+jobs:
+  build:
+    name: Build
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code from repository
+        uses: actions/checkout@v3
