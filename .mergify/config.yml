@@ -1,7 +1,6 @@
 shared:
   my_ci: &common_checks
-    - check-success=ci-one
-    - check-success=ci-two
+    - check-success=main
 
 queue_rules:
   - name: hotfix
@@ -9,7 +8,7 @@ queue_rules:
 
   - name: default
     merge_conditions:
-    - check-success=slow-ci
+    - check-success=main
     - and: *common_checks
 
 pull_request_rules:
