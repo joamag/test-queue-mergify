@@ -1,0 +1,30 @@
+shared:
+  my_ci: &common_checks
+    - check-success=ci-one
+    - check-success=ci-two
+
+queue_rules:
+  - name: hotfix
+    merge_conditions: *common_checks
+
+  - name: default
+    merge_conditions:
+    - check-success=slow-ci
+    - and: *common_checks
+
+pull_request_rules:
+  - name: Default merge
+    conditions:
+      - base=main
+      - and: *common_checks
+    actions:
+      queue:
+        name: default
+
+  - name: Hotfix merge
+    conditions:
+      - base=main
+      - label=hotfix
+    actions:
+      queue:
+        name: hotfix
