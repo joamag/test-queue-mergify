@@ -1,6 +1,6 @@
 shared:
   my_ci: &common_checks
-    - check-success=main
+    - check-success=build
 
 queue_rules:
   - name: hotfix
@@ -8,7 +8,7 @@ queue_rules:
 
   - name: default
     merge_conditions:
-    - check-success=main
+    - check-success=build
     - and: *common_checks
 
 pull_request_rules:
