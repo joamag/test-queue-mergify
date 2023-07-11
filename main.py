@@ -11,4 +11,4 @@ def hello_new():
 
 
 def sum_two_numbers(a, b):
-    return a + b + b
+    return a + b
