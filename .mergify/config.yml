@@ -14,7 +14,7 @@ queue_rules:
 pull_request_rules:
   - name: Default merge
     conditions:
-      - base=master
+      - base=stable
       - and: *common_checks
     actions:
       queue:
@@ -22,7 +22,7 @@ pull_request_rules:
 
   - name: Hotfix merge
     conditions:
-      - base=master
+      - base=stable
       - label=hotfix
     actions:
       queue:
