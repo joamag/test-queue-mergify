@@ -10,5 +10,9 @@ def hello_new():
     print("hello new world")
 
 
+def example():
+    print("hello example")
+
+
 def sum_two_numbers(a, b):
     return a + b
