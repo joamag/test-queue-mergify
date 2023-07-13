@@ -7,6 +7,7 @@ queue_rules:
     merge_conditions: *common_checks
 
   - name: default
+  - merge_method: squash
     merge_conditions:
     - check-success=build
     - and: *common_checks
